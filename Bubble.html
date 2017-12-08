@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+    <link rel='stylesheet' id='wp-syntax-css-css'  href='https://static01.nyt.com/packages/css/blogs/open/wp-syntax.css?ver=1.0' type='text/css' media='all' />
+        <link rel='prev' title='Announcing the TimesTags API' href='https://open.blogs.nytimes.com/2008/10/21/announcing-the-timestags-api/' />
+        <link rel='next' title='Announcing the Movie Reviews API' href='https://open.blogs.nytimes.com/2008/10/28/announcing-the-movie-reviews-api/' />
+        <link rel='canonical' href='https://open.blogs.nytimes.com/2008/10/27/the-new-york-times-data-visualization-lab/' />
+        <link rel='shortlink' href='https://open.blogs.nytimes.com/?p=53' />
+        <link rel='https://github.com/WP-API/WP-API' href='https://open.blogs.nytimes.com/json' />
+        <meta name="adxPage" content="blog.nytimes.com/open/post" />
+        <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://open.blogs.nytimes.com/feed/" />
+        <meta property="article:collection" content="https://static01.nyt.com/services/json/sectionfronts/technology/index.jsonp" />
+        <link rel="alternate" href="//mobile.nytimes.com/blogs/open/2008/10/27/the-new-york-times-data-visualization-lab/" />
+        <meta name="dfp-ad-unit-path" content="general/open" /> 
+        <meta name="thumbnail_150" content="https://static01.nyt.com/packages/images/icons/t_logo_300_black.png"/>        
+        <title>The New York Times Data Visualization Lab</title>
+        <link rel="shortcut icon" href="https://static01.nyt.com/favicon.ico" />
+        <!--[if (gt IE 9)|!(IE)]> <!-->
+        <link rel="stylesheet" type="text/css" media="screen" href="https://a1.nyt.com/assets/blogs/20170922-153928/css/blogs/styles.css" />
+        <!--<![endif]-->
+        <link rel='stylesheet' id='wp-syntax-css-css'  href='https://static01.nyt.com/packages/css/blogs/open/wp-syntax.css?ver=1.0' type='text/css' media='all' />
+        <link rel="stylesheet" type="text/css" media="screen" href="https://a1.nyt.com/assets/blogs/20170922-153928/css/blogs/universal.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="https://a1.nyt.com/assets/blogs/20170922-153928/css/blogs/styles-print.css" />
+        <script>
+        var require = {
+            baseUrl: 'https://a1.nyt.com/assets/',
+            waitSeconds: 20,
+            paths: {
+                'foundation': 'blogs/20170922-153928/js/foundation',
+                'shared': 'blogs/20170922-153928/js/shared',
+                'blogs': 'blogs/20170922-153928/js/blogs',
+                'auth/mtr': 'https://static01.nyt.com/js/mtr',
+                'auth/growl': 'https://static01.nyt.com/js/auth/growl/default',
+                'vhs': 'https://static01.nyt.com/video/vhs/build/vhs-2.x.min'
+            }
+        };
+        </script>
+        <!--[if (gte IE 9)|!(IE)]> <!-->
+        <script data-main="foundation/main" src="https://a1.nyt.com/assets/blogs/20170922-153928/js/foundation/lib/framework.js"></script>
+        <!--<![endif]-->
+		
+		<title>NY Times | Bubbles</title>
+		<link rel="shortcut icon" href="https://static01.nyt.com/favicon.ico" />
+		<link rel="stylesheet" href="./css/Bubble.css">  
+		<script type="text/javascript" src="./js/d3.v3.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+
+	  <body class="single single-post postid-53 blog-universal nyt-blog-open" id="" data-env="production" data-region="sea1">
+    <div id="shell" class="shell">
+    <header id="masthead" class="masthead masthead-theme-standard" role="banner">
+      <div class="container">
+          <div class="quick-navigation button-group">
+              <button class="button sections-button"><i class="icon sprite-icon"></i><span class="button-text">Sections</span></button>
+              <button class="button home-button" data-href="https://www.nytimes.com/" title="Go to the home page to see the latest top stories."><i class="icon sprite-icon"></i>
+              <a href="./index.html" style="color:black !important;"><span class="button-text">Home</span></a>
+              </button>
+              <button class="button search-button"><i class="icon sprite-icon"></i><span class="button-text">Search</span></button>
+              <a class="button skip-button skip-to-content visually-hidden focusable" href="#main">Skip to content</a>
+          </div><!-- close button-group -->
+          <div class="branding">
+              <h2 class="branding-heading">
+                  <a id="branding-heading-link" href="https://www.nytimes.com/">
+                      <span class="visually-hidden">The New York Times</span>
+                  </a>
+              </h2>
+              <script>window.magnum.writeLogo('small', 'https://a1.nyt.com/assets/blogs/20170922-153928/images/foundation/logos/', 'General', 'masthead-theme-standard', 'standard', 'branding-heading-link', 'blogs');</script>
+          </div><!-- close branding -->
+          <div class="story-meta">
+              <h6 class="kicker">
+                  <span class="kicker-label">
+                      <a href="https://open.blogs.nytimes.com">
+                      Open</a>
+                  </span>
+                  <span class="pipe">|</span>
+                  The New York Times Data Visualization Assignment        
+              </h6>
+          </div><!-- close story-meta -->
+          <div class="user-tools">
+              <div id="Bar1" class="ad bar1-ad nocontent robots-nocontent"></div>
+              <div id="sharetools-masthead" class="sharetools theme-classic">
+                  <div class="ad sharetools-inline-article-ad hidden"></div>
+              </div><!-- close shareTools -->
+              <button class="button search-button"><i class="icon sprite-icon"></i><span class="button-text">Search</span></button>
+              <div class="user-tools-button-group button-group">
+                  <button class="button subscribe-button hidden" data-href="https://www.nytimes.com/subscriptions/Multiproduct/lp3004.html?campaignId=4XUYF">Subscribe Now</button>
+                  <button class="button login-button login-modal-trigger hidden">Log In</button>
+                  <button class="button notifications-button hidden"><i class="icon sprite-icon"></i><span class="button-text">0</span></button>
+                  <button class="button user-settings-button"><i class="icon sprite-icon"></i><span class="button-text">Settings</span></button>
+              </div><!-- close user-tools-button-group -->
+          </div><!-- close user-tools -->
+        </div><!-- close container -->
+        <div class="search-flyout-panel flyout-panel">
+        <button class="button close-button" type="button"><i class="icon"></i><span class="visually-hidden">Close search</span></button>
+        <nav class="search-form-control form-control layout-horizontal">
+        <h2 class="visually-hidden">Site Search Navigation</h2>
+            <form class="search-form" role="search">
+                <div class="control">
+                    <div class="label-container visually-hidden">
+                        <label for="search-input">Search NYTimes.com</label>
+                    </div>
+                    <div class="field-container">
+                        <input id="search-input" name="search-input" type="text" class="search-input text" autocomplete="off" placeholder="Search NYTimes.com" />          
+                        <button type="button" class="button clear-button" tabindex="-1" aria-describedby="clear-search-input"><i class="icon"></i><span id="clear-search-input" class="visually-hidden">Clear this text input</span></button>
+                        <div class="auto-suggest" style="display: none;">
+                            <ol></ol>
+                        </div>
+                        <button class="button submit-button" type="submit">Go</button>
+                    </div>
+                </div><!-- close control -->
+            </form>
+        </nav>
+        </div><!-- close flyout-panel -->
+        <div id="notification-modals" class="notification-modals"></div>
+      </header>
+    </div>
+	    <div id="container">
+	      <div id="intro">
+	        <h3>New York Times - All the Digital News That's Fit to Print</h3> 
+	        <p>
+	          This data visualization shows the number of days an article appeared on the <a href="https://www.nytimes.com/">New York Times</a> website,
+	          <br>
+	          between  9/13/2017 and Monday 9/18/2017. 
+	          <ul>
+	            <li>
+	              Mouse-over the bubbles to <b>learn more</b> about each article 
+	            </li>
+	            <li>
+	              Click on the buttons to filter data
+	            </li>           
+	          </ul>
+	        </p>
+	        <br>
+	      </div> 
+	      <div id="main" role="main">
+	        <div id="view_selection" class="btn-group">
+	          <a href="#" id="all" class="btn active">All Articles</a>          
+	          <a href="#" id="category" class="btn">News Categories</a>
+	          <a href="#" id="frequency" class="btn">Days Article Appeared</a>
+	          <a href="#" id="kicker" class="btn">Article had Kicker</a>
+	        </div>       
+	        <div id="vis"></div>
+	      </div>
+	    </div> <!-- end of #container -->
+
+	    <script type="text/javascript">    
+	      d3.csv("./data/Bubble.csv", function(data) {
+	        custom_bubble_chart.init(data);
+	        custom_bubble_chart.toggle_view('all');
+	      });   
+	      $(document).ready(function() {
+	        $('#view_selection a').click(function() {
+	          var view_type = $(this).attr('id');
+	          $('#view_selection a').removeClass('active');
+	          $(this).toggleClass('active');
+	          custom_bubble_chart.toggle_view(view_type);
+	          return false;
+	        });
+	      }); 
+	    </script>   
+	    <script src="./js/Bubble.js"></script>
+	</body>
+</html>

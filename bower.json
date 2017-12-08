@@ -1,0 +1,27 @@
+{
+  "name": "reveal.js",
+  "version": "3.3.0",
+  "main": [
+    "js/reveal.js",
+    "css/reveal.css"
+  ],
+  "homepage": "http://lab.hakim.se/reveal-js/",
+  "license": "MIT",
+  "description": "NY Times Data Visualization Assignment",
+  "authors": [
+    "Sami Barshoon <sami.barshoon@gmail.com>"
+  ],
+  "dependencies": {
+    "headjs": "~1.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chugah"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ]
+}

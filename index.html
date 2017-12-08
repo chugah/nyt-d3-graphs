@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+    <head>  
+        <link rel='stylesheet' id='wp-syntax-css-css'  href='https://static01.nyt.com/packages/css/blogs/open/wp-syntax.css?ver=1.0' type='text/css' media='all' />
+        <link rel='prev' title='Announcing the TimesTags API' href='https://open.blogs.nytimes.com/2008/10/21/announcing-the-timestags-api/' />
+        <link rel='next' title='Announcing the Movie Reviews API' href='https://open.blogs.nytimes.com/2008/10/28/announcing-the-movie-reviews-api/' />
+        <link rel='canonical' href='https://open.blogs.nytimes.com/2008/10/27/the-new-york-times-data-visualization-lab/' />
+        <link rel='shortlink' href='https://open.blogs.nytimes.com/?p=53' />
+        <link rel='https://github.com/WP-API/WP-API' href='https://open.blogs.nytimes.com/json' />
+        <meta name="adxPage" content="blog.nytimes.com/open/post" />
+        <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://open.blogs.nytimes.com/feed/" />
+        <meta property="article:collection" content="https://static01.nyt.com/services/json/sectionfronts/technology/index.jsonp" />
+        <link rel="alternate" href="//mobile.nytimes.com/blogs/open/2008/10/27/the-new-york-times-data-visualization-lab/" />
+        <meta name="dfp-ad-unit-path" content="general/open" /> 
+        <meta name="thumbnail_150" content="https://static01.nyt.com/packages/images/icons/t_logo_300_black.png"/>        
+        <title>The New York Times Data Visualization Lab</title>
+        <link rel="shortcut icon" href="https://static01.nyt.com/favicon.ico" />
+        <!--[if (gt IE 9)|!(IE)]> <!-->
+        <link rel="stylesheet" type="text/css" media="screen" href="https://a1.nyt.com/assets/blogs/20170922-153928/css/blogs/styles.css" />
+        <!--<![endif]-->
+        <link rel='stylesheet' id='wp-syntax-css-css'  href='https://static01.nyt.com/packages/css/blogs/open/wp-syntax.css?ver=1.0' type='text/css' media='all' />
+        <link rel="stylesheet" type="text/css" media="screen" href="https://a1.nyt.com/assets/blogs/20170922-153928/css/blogs/universal.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="https://a1.nyt.com/assets/blogs/20170922-153928/css/blogs/styles-print.css" />
+        <script>
+        var require = {
+            baseUrl: 'https://a1.nyt.com/assets/',
+            waitSeconds: 20,
+            paths: {
+                'foundation': 'blogs/20170922-153928/js/foundation',
+                'shared': 'blogs/20170922-153928/js/shared',
+                'blogs': 'blogs/20170922-153928/js/blogs',
+                'auth/mtr': 'https://static01.nyt.com/js/mtr',
+                'auth/growl': 'https://static01.nyt.com/js/auth/growl/default',
+                'vhs': 'https://static01.nyt.com/video/vhs/build/vhs-2.x.min'
+            }
+        };
+        </script>
+        <!--[if (gte IE 9)|!(IE)]> <!-->
+        <script data-main="foundation/main" src="https://a1.nyt.com/assets/blogs/20170922-153928/js/foundation/lib/framework.js"></script>
+        <!--<![endif]-->
+        
+    </head>
+    <body class="single single-post postid-53 blog-universal nyt-blog-open" id="" data-env="production" data-region="sea1">
+        <div id="shell" class="shell">
+            <header id="masthead" class="masthead masthead-theme-standard" role="banner">
+                <div class="container">
+                    <div class="quick-navigation button-group">
+                        <button class="button sections-button"><i class="icon sprite-icon"></i><span class="button-text">Sections</span></button>
+                        <button class="button home-button" data-href="https://www.nytimes.com/" title="Go to the home page to see the latest top stories."><i class="icon sprite-icon"></i>
+                            <span class="button-text">Home</span>
+                        </button>
+                        <button class="button search-button"><i class="icon sprite-icon"></i><span class="button-text">Search</span></button>
+                        <a class="button skip-button skip-to-content visually-hidden focusable" href="#main">Skip to content</a>
+                    </div><!-- close button-group -->
+                    <div class="branding">
+                        <h2 class="branding-heading">
+                            <a id="branding-heading-link" href="https://www.nytimes.com/">
+                                <span class="visually-hidden">The New York Times</span>
+                            </a>
+                        </h2>
+                        <script>window.magnum.writeLogo('small', 'https://a1.nyt.com/assets/blogs/20170922-153928/images/foundation/logos/', 'General', 'masthead-theme-standard', 'standard', 'branding-heading-link', 'blogs');</script>
+                    </div><!-- close branding -->
+                    <div class="story-meta">
+                        <h6 class="kicker">
+                            <span class="kicker-label">
+                                <a href="https://open.blogs.nytimes.com">
+                                Open</a>
+                            </span>
+                            <span class="pipe">|</span>
+                            The New York Times Data Visualization Assignment        
+                        </h6>
+                    </div><!-- close story-meta -->
+                    <div class="user-tools">
+                        <div id="Bar1" class="ad bar1-ad nocontent robots-nocontent"></div>
+                        <div id="sharetools-masthead" class="sharetools theme-classic">
+                            <div class="ad sharetools-inline-article-ad hidden"></div>
+                        </div><!-- close shareTools -->
+                        <button class="button search-button"><i class="icon sprite-icon"></i><span class="button-text">Search</span></button>
+                        <div class="user-tools-button-group button-group">
+                            <button class="button subscribe-button hidden" data-href="https://www.nytimes.com/subscriptions/Multiproduct/lp3004.html?campaignId=4XUYF">Subscribe Now</button>
+                            <button class="button login-button login-modal-trigger hidden">Log In</button>
+                            <button class="button notifications-button hidden"><i class="icon sprite-icon"></i><span class="button-text">0</span></button>
+                            <button class="button user-settings-button"><i class="icon sprite-icon"></i><span class="button-text">Settings</span></button>
+                        </div><!-- close user-tools-button-group -->
+                    </div><!-- close user-tools -->
+                </div><!-- close container -->
+                <div class="search-flyout-panel flyout-panel">
+                <button class="button close-button" type="button"><i class="icon"></i><span class="visually-hidden">Close search</span></button>
+                <nav class="search-form-control form-control layout-horizontal">
+                <h2 class="visually-hidden">Site Search Navigation</h2>
+                    <form class="search-form" role="search">
+                        <div class="control">
+                            <div class="label-container visually-hidden">
+                                <label for="search-input">Search NYTimes.com</label>
+                            </div>
+                            <div class="field-container">
+                                <input id="search-input" name="search-input" type="text" class="search-input text" autocomplete="off" placeholder="Search NYTimes.com" />          
+                                <button type="button" class="button clear-button" tabindex="-1" aria-describedby="clear-search-input"><i class="icon"></i><span id="clear-search-input" class="visually-hidden">Clear this text input</span></button>
+                                <div class="auto-suggest" style="display: none;">
+                                    <ol></ol>
+                                </div>
+                                <button class="button submit-button" type="submit">Go</button>
+                            </div>
+                        </div><!-- close control -->
+                    </form>
+                </nav>
+                </div><!-- close flyout-panel -->
+                <div id="notification-modals" class="notification-modals"></div>
+            </header>
+            <nav id="ribbon" class="ribbon ribbon-start nocontent robots-nocontent" aria-hidden="true">
+                <div class="nocontent robots-nocontent">
+                    <ol class="ribbon-menu">
+                        <li class="collection ribbon-loader">
+                            <div class="loader "><span class="visually-hidden">Loading...</span></div>
+                        </li>
+                    </ol>
+                    <div class="ribbon-navigation-container">
+                        <nav class="ribbon-navigation next">
+                            <span class="visually-hidden">See next articles</span>
+                            <div class="arrow arrow-right">
+                                <div class="arrow-conceal"></div>
+                            </div>
+                        </nav>
+                        <nav class="ribbon-navigation previous">
+                            <span class="visually-hidden">See previous articles</span>
+                            <div class="arrow arrow-left">
+                                <div class="arrow-conceal"></div>
+                            </div>
+                        </nav>
+                    </div>
+                </div><!-- close nocontent -->
+            </nav>
+            <nav id="navigation" class="navigation">
+                <h2 class="visually-hidden">Site Navigation</h2>
+            </nav><!-- close navigation -->
+            <nav id="mobile-navigation" class="mobile-navigation hidden">
+                <h2 class="visually-hidden">Site Mobile Navigation</h2>
+            </nav><!-- close mobile-navigation -->
+            <div id="navigation-edge" class="navigation-edge"></div>
+                <main id="main" class="main" role="main">
+                    <div id="TopAd" class="ad top-ad"></div>
+                    <div id="mobilebanner" class="ad mobilebanner"></div>
+                    <div id="story" class="story theme-main">
+                        <div id="open" class="spanAC blog">
+                            <header id="blogs-masthead" class="wrap">
+                                <div class="ad sponsortile-ad hidden nocontent robots-nocontent">
+                                    <div class="caption">Supported by</div>
+                                    <div id="sponsortile" class="ad sponsortile-ad-creative"></div>
+                                </div>
+                                <div class="element1">
+                                    <a href="https://open.blogs.nytimes.com/?module=BlogMain&action=Click&region=Header&pgtype=Blogs&version=Blog Post&contentCollection=General">
+                                    <div id="logo" class="archived-blog-post">
+                                        <div class="w75 left site-header-logo">
+                                            <img src="https://static01.nyt.com/images/blogs_v3/open/open75.gif" alt="Open"/>
+                                        </div>
+                                        <div class="site-title">Open</div>
+                                        <div class="site-description">All the Code That&#039;s Fit to Print</div>
+                                    </div>
+                                    </a>    
+                                </div>
+                                <div class="element2">
+                                    <div class="inlineSearchControl">
+                                        <form method="get" id="searchform" action="https://open.blogs.nytimes.com/">
+                                        <input type="text" value="" name="s" id="s" class="text" placeholder="Search Open">
+                                        <button type="submit" class="searchsubmit">Search</button>
+                                        </form>
+                                    </div>  
+                                </div>
+                                <div class="clear"></div>
+                            </header>
+                            <div class="a-column " id="a-col">
+                                <div id="content" class="hfeed">
+                                    <article class="post-53 post type-post status-publish hentry tag-community tag-data-viz tag-visualization" id="post-53">
+                                    <header class="postHeader">
+                                        <div class="postKicker"></div>
+                                        <h1 itemprop="headline" class="entry-title">The New York Times Data Visualization Assignment</h1>
+                                        <div class="story-meta-footer">
+                                            <address class="byline author vcard" itemprop="author creator" itemtype="http://schema.org/Person">
+                                                By Sami Barghshoon           
+                                            </address>
+                                            <time class="dateline " datetime="2008-10-27T18:45:16+00:00" itemprop="datePublished">
+                                                September 26, 2017
+                                            </time>
+                                        </div>
+                                    </header>
+                                    <div class="entry-content">
+                                        <h2>Objective</h2>
+                                        <p class="story-body-text" itemprop="articleBody">The goal of this assignment is to visually display quantitative information through color, layering, and interaction in order to reach conclusions and make decisions. The information source stemmed from a NY Times JSON article feed &mdash; see protocol section for URL.   
+                                        </p>
+                                        <h2>Protocol</h2>
+                                        <p class="story-body-text" itemprop="articleBody">The <a href="http://static01.nyt.com/services/json/sectionfronts/index.json" target="_blank">JSON</a> feed was provided by the New York Times to track the life cycle for articles that appear in the section fronts. Data points were collected every hour for 24 hours. The first data point was collected Sunday Sept. 17th, 2017 at 6 PM and the last collected Monday Sept. 18th at 6 PM. The data was converted from JSON to csv via this <a href="http://convertcsv.com/csv-to-json.htm" target="_blank">online</a> tool.Data visualization relied on the <a href="https://d3js.org/" target="_blank">d3</a> JavaScript library.</p>
+                                        <p>The fields used from the JSON feed include Id, Publication Date, Build Date, Title, Article Link, Author, and Kicker. The difference between the Publication and Build Dates determined the number of days an article appeared. A Category field was created and determined from the article link. For instance, the link for Id 100000005423118 contains 'science' after the publication date '2017/09/13' (see below). Therefore, this article fell into the science category. 
+                                        <p>https://www.nytimes.com/2017/09/13/science/parasites-extinction-climate-change.html</p>
+                                        </p>
+                                     
+                                        <p>The analyses excluded the following Ids: 100000005148449, 100000005358680, 100000004718174, 100000005261282, and 100000005391163. Ids ending with 449 and 680 were removed because they were videos the analyses was restricted to articles only,  However, the remaining ids were articles with publication dates as far back as October 2016. Since it was not possible to determine whether these articles appeared every day or how often since their publication date, they were omitted. Moreover, no statistical analyses were undertaken to the remaining data set due to the small sample size (less than 100). 
+                                        </p>
+                                        <h2>Limitations</h2>
+                                        <p class="story-body-text" itemprop="articleBody">The following factors limited the scope of the analyses:
+                                        </p>
+                                            <ul>
+                                                <li>Data trend is directional at best</li>
+                                                <li>24 hour cycle is not sufficient to identify larger trends</li>
+                                                <li>Article position on the web page was not considered</li>
+                                                <li>Click through rate influence could not be evaluated</li>
+                                                <li>Impact of image on the number of days article appeared</li>
+                                                <li>Difficult to implement interactive charts in real time</li>
+                                            </ul>
+                                        <p class="story-body-text" itemprop="articleBody">While this list is not exhaustive, it warrants mentioning that further studies are needed to address article rotation and its impact on factors such as website traffic, ad placements, etc.
+                                        </p>
+                                        <h2>Results</h2>
+                                        <p class="story-body-text" itemprop="articleBody">The sample size obtained from this study was 98 articles. These articles were analyzed to determine the length of an article featured from its publication date to display an article's lifecycle during the 24 hour period. Each analysis utitlized a different visualization technique.
+                                        </p>                                        
+                                        <a href="./Bubble.html" target="_blank">
+                                            <h3 style="text-align:left !important;">Number of Days Article Featured</h3>
+                                        </a>
+                                        <p><a href="./Bubble.html" target="_blank"><img src="./assets/bubble.jpg" alt="Bubble Chart"/></a></p>
+                                        <p class="story-body-text" itemprop="articleBody">The length of time an article featured was elucidated through animated bubble charts developed by <a href="http://vallandingham.me/bubble_charts_in_d3.html" target="_blank">Jim Vallandingham</a>. The following pattern emerged from this analysis:</p>
+                                            <ul>
+                                                <li>10 articles were featured for more than 3 days</li>
+                                                <li>20 articles were featured for 2 or more days</li>
+                                                <li>44 articles were featured for more than 1 day</li>
+                                                <li>56 articles were featured for less than 1 day</li>
+                                            </ul>
+                                        <p class="story-body-text" itemprop="articleBody">60% of articles featured more than 2 days  had a kicker associated with them compared to 25% of articles featured for less than 1 day. The earliest publication date observed was 9/13/2017 and the most recent publication date was 9/18/2017. Only 9 authors contributed to more than 1 article (data not shown).</p>
+                                        <h3 style="text-align:left !important;">Bubble Charts in Real Time</h3>
+                                         <p class="story-body-text" itemprop="articleBody">It is an arduous process to render bubble charts in real time. Significant algorithms are required to handle the force aspect of d3 to initiate and manage the animation. Writing these algorithms would take weeks.</p>
+                                        <p class="story-body-text" itemprop="articleBody">
+                                        Efforts have been made to generate bubble charts through API use, but the motion lacked an organic quality. <a href="https://pubnub.github.io/d3-bubble/" target="_blank">Tomomi Imura</a> demonstrated d3 bubble animation using PubNub API and the resulting force of motion.</p>                                       
+                                        <a href="./Bar-lines.html" target="_blank">
+                                            <h3 style="text-align:left !important;">24 Hour Cycle of Articles</h3>
+                                        </a>
+                                        <p><a href="./Bar-lines.html" target="_blank"><img src="./assets/bar-lines.jpg" alt="Bar and Line Chart"/></a></p>
+                                        <p class="story-body-text" itemprop="articleBody">The 24 hour cycle of an article was examined through parallel coordinates technique developed by <a href="https://bl.ocks.org/mbostock/1341021" target="_blank">Mike Bostock</a>, and bar graph with tooltip developed by <a href="http://bl.ocks.org/Caged/6476579" target="_blank">Justin Palmer</a>. The analysis revealed the following information:</p>
+                                            <ul>
+                                                <li>30 articles were removed over 24 hours</li>
+                                                <li>36 articles were added over 24 hours</li>
+                                                <li>7 articles appeared the entire 24 hours</li>
+                                                <li>26 articles were added and removed over 24 hours</li>
+                                                <li>2 articles were added, removed, and added again over 24 hours</li>
+                                            </ul>
+                                        <p class="story-body-text" itemprop="articleBody">
+                                        Overall, the removal and addition of articles followed a homeostatic process. Directionally, more articles appeared during the day than evening and the number of articles peaked on September 18th at 12 PM.</p>
+                                        <h3 style="text-align:left !important;">Bar and Line Charts in Real Time</h3>
+                                        <p class="story-body-text" itemprop="articleBody">Rendering a bar or line chart without animation is feasible. However, this feasibility is diminished greatly once animation is introduced.</p>
+                                        <p class="story-body-text" itemprop="articleBody">
+                                        There are several examples online that use d3 to generate basic charts. <a href="http://bl.ocks.org/simenbrekken/6634070" target="_blank">Simen Brekken</a> and <a href="https://bl.ocks.org/boeric/6a83de20f780b42fadb9" target="_blank">Bo Ericsson</a> demonstrated d3 animation using simple line chart and dot chart respectively. </p>
+                                        <h3 style="text-align:left !important;">d3 Animation Data Tables</h3>
+                                        <p class="story-body-text" itemprop="articleBody">Another challenge with d3 animation is the slightest error in data table format prevents the rendering of the visual. Therefore, a lot of backend scrubbing is required to ensure data visualization.
+                                        </p>
+                                        <h2>Conclusions</h2>
+                                        <p class="story-body-text" itemprop="articleBody">An analysis of the New York Times news feed revealed how long articles are featured and how frequently they change over 24 hours. It would be interesting to evaluate this pattern over a longer period and include factors such as an article's click through rate, placement on the web page, and use of image.</p>
+                                        <p class="story-body-text" itemprop="articleBody">Information gleamed from this exploration could be useful in its support of marketing activities, content management, and ultimately, revenue generation. It may also reveal the processes present or absent that govern article selection.</p>
+                                         <h3 style="text-align:left !important;">Acknowledgement</h3>
+                                        <p class="story-body-text" itemprop="articleBody">I would like to thank Heather and Ed at the New York Times for speaking with me about the data visualization and sharing their insight about the position.</p>
+
+                                    </div>
+                                    </article>
+                                    <section id="whats-next" class="whats-next nocontent robots-nocontent">
+                                        <h2 class="visually-hidden">What's Next</h2>
+                                        <div class="nocontent robots-nocontent">
+                                            <div class="loader-container">
+                                                <div class="loader loader-t-logo-32x32-ecedeb-ffffff">
+                                                    <span class="visually-hidden">Loading...</span>
+                                                </div>
+                                            </div>
+                                        </div><!-- close nocontent -->
+                                    </section>
+                                </div><!-- end content -->
+                            </div><!-- end .a-column -->
+                            <div class="cColumn nocontent robots-nocontent">
+                                <aside>
+                                    <div class="postNavigation">
+                                        <ul class="opposingFloatControl wrap">
+                                            <li class="element1">
+                                                <span class="previous">Previous Post</span>
+                                                <div class="arrow arrow-left">
+                                                    <div class="arrow-conceal"></div>
+                                                </div>
+                                                <a class="postTitle" href="https://open.blogs.nytimes.com/2008/10/21/announcing-the-timestags-api/" title="Announcing the TimesTags API">
+                                                    Announcing the TimesTags API</a>
+                                            </li>
+                                            <li class="element2">
+                                                <span class="next">Next Post</span>
+                                                <div class="arrow arrow-right">
+                                                    <div class="arrow-conceal"></div>
+                                                </div>
+                                                <a class="postTitle" href="https://open.blogs.nytimes.com/2008/10/28/announcing-the-movie-reviews-api/" title="Announcing the Movie Reviews API">
+                                                    Announcing the Movie Reviews API</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="module ad" id="MiddleRight"></div>
+                                    <div id="nyt_about_blog-3" class="module nocontent widget_nyt_about_blog"><h4 class="moduleHeader">About</h4>
+                                        <div class="entry">
+                                            <p class="summary">Open is a blog about code and development written by New York Times developers. We cover everything from our open source projects and APIs to the technology powering our latest products.</p>
+                                        </div>
+                                    </div>      
+                                    <div class="module archivesModule clearfix nocontent">
+                                        <h4 class="moduleHeader">Archive</h4>           
+                                        <select name="archive_chrono" onchange="window.location.href=this.value; this.selectedIndex=this.options[0]">
+                                            <option class="archiveform_option" value="">Select Month</option>
+                                            <option value='https://open.blogs.nytimes.com/2017/02/'> February 2017 </option>
+                                            <option value='https://open.blogs.nytimes.com/2017/01/'> January 2017 </option>
+                                            <option value='https://open.blogs.nytimes.com/2016/11/'> November 2016 </option>
+                                            <option value='https://open.blogs.nytimes.com/2016/10/'> October 2016 </option>
+                                            <option value='https://open.blogs.nytimes.com/2016/09/'> September 2016 </option>
+                                            <option value='https://open.blogs.nytimes.com/2016/08/'> August 2016 </option>
+                                            <option value='https://open.blogs.nytimes.com/2016/07/'> July 2016 </option>
+                                            <option value='https://open.blogs.nytimes.com/2016/06/'> June 2016 </option>
+                                            <option value='https://open.blogs.nytimes.com/2016/04/'> April 2016 </option>
+                                            <option value='https://open.blogs.nytimes.com/2016/02/'> February 2016 </option>
+                                            <option value='https://open.blogs.nytimes.com/2015/12/'> December 2015 </option>
+                                            <option value='https://open.blogs.nytimes.com/2015/11/'> November 2015 </option>
+                                            <option value='https://open.blogs.nytimes.com/2015/08/'> August 2015 </option>
+                                            <option value='https://open.blogs.nytimes.com/2015/04/'> April 2015 </option>
+                                            <option value='https://open.blogs.nytimes.com/2015/03/'> March 2015 </option>
+                                        </select>
+                                    </div>
+                                    <div id="recentposts-2" class="module nocontent widget_recentposts">
+                                        <h4 class="moduleHeader">Recent Posts</h4>              
+                                        <div class="entry">
+                                            <h5><a href="https://open.blogs.nytimes.com/2017/02/06/quick-and-statistically-useful-validation-of-page-performance-tweaks/" title="Read: Quick and Statistically Useful Validation of Page Performance Tweaks">Quick and Statistically Useful Validation of Page Performance Tweaks</a>
+                                            <span class="postMetaHeaderCommentCount commentCount hidden">
+                                                <i class="icon"></i>
+                                                <a class="commentCountLink commentCountNumberOnly commentCountNoPrompt" href="https://open.blogs.nytimes.com/2017/02/06/quick-and-statistically-useful-validation-of-page-performance-tweaks/"></a>
+                                            </span></h5>
+                                            <p class="summary">
+                                            We wanted to share how we measure modest performance changes when a page has many assets of variable speed and complexity that can impact its performance.<a href="https://open.blogs.nytimes.com/2017/02/06/quick-and-statistically-useful-validation-of-page-performance-tweaks/" class="more-link">Read&#160;more&#8230;</a></p>
+                                        </div>
+                                        <div class="entry">
+                                            <h5><a href="https://open.blogs.nytimes.com/2017/01/13/store-grand-opening-wrangling-android-data-loading-and-caching/" title="Read: Store Grand Opening &mdash; Wrangling Android Data Loading and Caching">Store Grand Opening &mdash; Wrangling Android Data Loading and Caching</a>
+                                            <span class="postMetaHeaderCommentCount commentCount hidden">
+                                            <i class="icon"></i>
+                                            <a class="commentCountLink commentCountNumberOnly commentCountNoPrompt" href="https://open.blogs.nytimes.com/2017/01/13/store-grand-opening-wrangling-android-data-loading-and-caching/"></a>
+                                            </span></h5>
+                                            <p class="summary">
+                                            Today we&#8217;re open-sourcing Store &#8212; a magical middle piece that aims to simplify fetching, parsing, storage, and retrieval of data in your Android application. <a href="https://open.blogs.nytimes.com/2017/01/13/store-grand-opening-wrangling-android-data-loading-and-caching/" class="more-link">Read&#160;more&#8230;</a></p>
+                                        </div>
+                                        <div class="entry">
+                                            <h5><a href="https://open.blogs.nytimes.com/2017/01/12/continuous-deployment-to-google-cloud-platform-with-drone/" title="Read: Continuous Deployment to Google Cloud Platform with Drone">Continuous Deployment to Google Cloud Platform with Drone</a>
+                                            <span class="postMetaHeaderCommentCount commentCount hidden">
+                                            <i class="icon"></i>
+                                            <a class="commentCountLink commentCountNumberOnly commentCountNoPrompt" href="https://open.blogs.nytimes.com/2017/01/12/continuous-deployment-to-google-cloud-platform-with-drone/"></a>
+                                            </span></h5>
+                                            <p class="summary">
+                                            From our exploratory work, we&#8217;ve come up with two open source plugins to share with the community: drone-gke for Google Container Engine and drone-gae for Google App Engine.<a href="https://open.blogs.nytimes.com/2017/01/12/continuous-deployment-to-google-cloud-platform-with-drone/" class="more-link">Read&#160;more&#8230;</a></p>
+                                        </div>
+                                        <div class="entry">
+                                            <h5><a href="https://open.blogs.nytimes.com/2017/01/10/https-on-nytimes-com/" title="Read: HTTPS on NYTimes.com">HTTPS on NYTimes.com</a>
+                                            <span class="postMetaHeaderCommentCount commentCount hidden">
+                                            <i class="icon"></i>
+                                            <a class="commentCountLink commentCountNumberOnly commentCountNoPrompt" href="https://open.blogs.nytimes.com/2017/01/10/https-on-nytimes-com/"></a>
+                                            </span></h5>
+                                            <p class="summary">
+                                            We are thrilled to announce that we have begun to enable HTTPS on NYTimes.com, an effort that helps protect the privacy of our readers and ensures the authenticity of our content.<a href="https://open.blogs.nytimes.com/2017/01/10/https-on-nytimes-com/" class="more-link">Read&#160;more&#8230;</a></p>
+                                        </div>
+                                        <div class="entry">
+                                            <h5><a href="https://open.blogs.nytimes.com/2016/11/11/building-a-cross-platform-360-degree-video-experience-at-the-new-york-times/" title="Read: Building a Cross Platform 360-degree Video Experience at The New York Times">Building a Cross Platform 360-degree Video Experience at The New York Times</a>
+                                            <span class="postMetaHeaderCommentCount commentCount hidden">
+                                            <i class="icon"></i>
+                                            <a class="commentCountLink commentCountNumberOnly commentCountNoPrompt" href="https://open.blogs.nytimes.com/2016/11/11/building-a-cross-platform-360-degree-video-experience-at-the-new-york-times/"></a>
+                                            </span></h5>
+                                            <p class="summary">
+                                            This month, we added support for 360-degree videos into our core news products &#8212; and today, we&#8217;re open sourcing our 360 video framework for iOS and 360 presets.<a href="https://open.blogs.nytimes.com/2016/11/11/building-a-cross-platform-360-degree-video-experience-at-the-new-york-times/" class="more-link">Read&#160;more&#8230;</a></p>
+                                        </div>
+                                    </div><!-- end Recent Posts side tool -->
+                                    <div class="module ad" id="Box1"></div>
+                                </aside>
+                            </div>      
+                            <div class="clear"></div>
+                        </div><!-- end blog wrap -->
+                        <div class="hideContent"></div>
+                        <div id="mobilebanner2" class="ad mobilebanner2"></div>
+                        <div class="accessibility-ad-header visually-hidden">
+                            <p>Advertisement</p>
+                        </div>
+                        <div id="SponLink" class="text-ad bottom-left-ad nocontent robots-nocontent"></div>
+                        <div id="Top5" class="ad top5-ad hidden nocontent robots-nocontent"></div>
+                    </div><!--end story theme-main-->
+                <div class="search-overlay"></div>
+            </main><!-- close main -->
+            <footer id="page-footer" class="page-footer" role="contentinfo">
+                <nav>
+                     <ul>
+                         <li>
+                            <a href="https://www.nytco.com" itemprop="copyrightNotice">
+                                &copy; <span itemprop="copyrightYear">2017</span>
+                                <span itemprop="copyrightHolder provider sourceOrganization" itemscope
+                                    itemtype="http://schema.org/Organization"
+                                    itemid="http://www.nytimes.com">
+                                    <span itemprop="name"> The New York Times Company</span>
+                                    <meta itemprop="tickerSymbol" content="NYSE NYT"/>
+                                </span>
+                            </a>
+                        </li>
+                        <li><a href="https://www.nytimes.com/ref/membercenter/help/infoservdirectory.html">Contact Us</a></li>
+                        <li><a href="http://www.nytco.com/careers/">Work With Us</a></li>
+                        <li><a href="http://nytmediakit.com/">Advertise</a></li>
+                        <li><a href="https://www.nytimes.com/content/help/rights/privacy/policy/privacy-policy.html#pp">Your Ad Choices</a></li>
+                        <li><a href="https://www.nytimes.com/privacy">Privacy</a></li>
+                        <li><a href="https://www.nytimes.com/ref/membercenter/help/agree.html" itemprop="usageTerms">Terms of Service</a></li>
+                        <li class="last-item"><a href="https://www.nytimes.com/content/help/rights/sale/terms-of-sale.html">Terms of Sale</a></li>
+                     </ul>
+                </nav>
+                <nav class="last-nav">
+                    <ul>
+                        <li><a href="http://spiderbites.nytimes.com">Site Map</a></li>
+                        <li><a href="https://www.nytimes.com/membercenter/sitehelp.html">Help</a></li>
+                        <li><a href="https://myaccount.nytimes.com/membercenter/feedback.html">Site Feedback</a></li>
+                        <li class="last-item"><a href="https://www.nytimes.com/subscriptions/Multiproduct/lp5558.html?campaignId=37WXW">Subscriptions</a></li>
+                    </ul>
+                </nav>
+            </footer>       
+        </div><!-- close shell -->
+        <script>
+        require(['foundation/main'], function () {
+            require(['blogs/main']);
+            require(['jquery/nyt', 'foundation/views/page-manager'], function ($, pageManager) {
+                if (window.location.search.indexOf('disable_tagx') > 0) {
+                    return;
+                }
+                $(document).ready(function () {
+                    require(['https://a1.nyt.com/analytics/tagx-simple.min.js'], function () {
+                        pageManager.trackingFireEventQueue();
+                    });
+                });
+            });
+        });
+        </script>
+        <div id="Inv1" class="ad inv1-ad hidden"></div>
+        <div id="Inv2" class="ad inv2-ad hidden"></div>
+        <div id="Inv3" class="ad inv3-ad hidden"></div>
+        <div id="ab1" class="ad ab1-ad hidden"></div>
+        <div id="ab2" class="ad ab2-ad hidden"></div>
+        <div id="ab3" class="ad ab3-ad hidden"></div>
+        <div id="prop1" class="ad prop1-ad hidden"></div>
+        <div id="prop2" class="ad prop2-ad hidden"></div>
+        <div id="Anchor" class="ad anchor-ad hidden"></div>
+        <div id="ADX_CLIENTSIDE" class="ad adx-clientside-ad hidden"></div>
+    </body>
+</html>
